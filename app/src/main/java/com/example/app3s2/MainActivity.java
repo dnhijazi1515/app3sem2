@@ -56,17 +56,15 @@ public class MainActivity extends AppCompatActivity {
                         password = etPassword.getText().toString().trim();
 
                         if (username.equals("admin") && password.equals("admin")) {
-                            // إذا كانت المعطيات صحيحة
-                            Toast.makeText(MainActivity.this, "تم تسجيل الدخول بنجاح!", Toast.LENGTH_SHORT).show();
-                            dialog.dismiss(); // إغلاق مربع الحوار
+                            Toast.makeText(MainActivity.this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
                             intent = new Intent(MainActivity.this, Activity2.class);
-                            intent.putExtra("username", username); // إرسال اسم المستخدم
-                            startActivity(intent); // الانتقال إلى الصفحة الثانية
+                            intent.putExtra("username", username);
+                            startActivity(intent);
                         } else {
-                            // إذا كانت المعطيات غير صحيحة
                             Toast.makeText(MainActivity.this, "خطأ في اسم المستخدم أو كلمة المرور", Toast.LENGTH_SHORT).show();
-                            etUsername.setText(""); // مسح اسم المستخدم
-                            etPassword.setText(""); // مسح كلمة المرور
+                            etUsername.setText("");
+                            etPassword.setText("");
                         }
                     }
                 })
